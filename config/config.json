@@ -2,7 +2,7 @@
     "development": {
       "username": "root",
       "password": "phimualpha1898",
-      "database": "myhero_DB",
+      "database": "dsf_test_users",
       "host": "127.0.0.1",
       "dialect": "mysql"
     },
