@@ -17,6 +17,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 require("./controllers/authController")(app);
+require("./controllers/customerController")(app);
 
 app.get('/', (req, res) => {
   res.json({
@@ -24,7 +25,7 @@ app.get('/', (req, res) => {
   })
 })
 
-db.sequelize.sync().then(function() {
+db.sequelize.sync({force: false}).then(function() {
   app.listen(PORT, function() {
     console.log(`Server Status: Running. Active Listening to PORT: ${PORT}`);
   })
