@@ -13,4 +13,11 @@ module.exports = function(app) {
             res.status(401).json(err)
         })
     })
+
+    app.get("/api/getcust", async function(req, res) {
+        let customers = await db.Customers.findAll({}).then(function () {
+            console.log(customers)
+            res.json(customers)    //working here!!
+        })
+    })
 }
