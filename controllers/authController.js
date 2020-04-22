@@ -9,9 +9,10 @@ module.exports = function(app) {
         })
     });
 
-    app.get("/logout", function(req, res) {
+    app.get("/api/logout", function(req, res) {
         req.logout();
-        res.redirect("/");
+        // res.redirect("/");
+        res.json({loggedout: "yes"})
     })
 
     app.post("/api/signup", function (req, res) {
